@@ -1,5 +1,4 @@
 import CandidatosForm from "../components/CandidatosForm/CandidatosForm";
-import type { Candidato } from "../types";
 
 
 

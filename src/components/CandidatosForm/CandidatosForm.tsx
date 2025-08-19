@@ -1,56 +1,25 @@
-import { useState } from "react";
-import { postCandidato } from "../../api/candidatos/postCandidato";
-import type { PostCandidato } from "../../types";
-
+import { useCandidatoForm } from "../../hooks/useCandidatoForm";
 import styles from "./CandidatosForm.module.css"
 
-
-const apiSubmit = async (candidato: PostCandidato) => {
-    await postCandidato(candidato);        
-};
 
 
 export default function CandidatosForm() {
 
-    const [nombre, setNombre] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [telefono, setTelefono] = useState<string>("");
-    const [skills, setSkills] = useState<string[]>([]);
-    const [skillActual, setSkillActual] = useState<string>("");
-    const [experiencia, setExperiencia] = useState<number>(0);
-    const [educacion, setEducacion] = useState<string>("");
-    const [urlLinkedin, setUrlLinkedin] = useState<string>("");
-    const [experiencia1, setExperiencia1] = useState<string>("");
-    const [experiencia2, setExperiencia2] = useState<string>("");
+    const {
+        nombre, setNombre,
+        email, setEmail,
+        telefono, setTelefono,
+        skills, setSkills,
+        skillActual, setSkillActual,
+        experiencia, setExperiencia,
+        educacion, setEducacion,
+        urlLinkedin, setUrlLinkedin,
+        experiencia1, setExperiencia1,
+        experiencia2, setExperiencia2,
+        handleSubmit
+    } = useCandidatoForm();
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-
-        const candidato: PostCandidato = {
-            nombre,
-            email,
-            telefono,
-            skills: skills,
-            experiencia,
-            educacion,
-            urLinkedin: urlLinkedin,
-            experiencia1,
-            experiencia2
-        };
-
-        apiSubmit(candidato);
-
-        // Limpiar
-        setNombre("");
-        setEmail("");
-        setTelefono("");
-        setSkills([]);
-        setExperiencia(0);
-        setEducacion("");
-        setUrlLinkedin("");
-        setExperiencia1("");
-        setExperiencia2("");
-    };
+    
 
     return (
     <form onSubmit={handleSubmit} className={styles.formContainer}>
