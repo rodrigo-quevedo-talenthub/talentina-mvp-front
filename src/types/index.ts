@@ -1,16 +1,28 @@
 
+//TODO: revisar este type
+export type EstadoCandidato = {
+  PENDIENTE: 'PENDIENTE',
+  PRESELECCIONADO: 'PRESELECCIONADO',
+  ENTREVISTA: 'ENTREVISTA',
+  DESCARTADO: 'DESCARTADO',
+  CONTRATADO: 'CONTRATADO'
+};
+
+
 export interface Candidato {
     id: number,
     nombre: string,
     email: string,
-    telefono: string,
+    telefono: string | null,
     skills: string[],
     experiencia: number,
-    educacion: string,
-    estado: string, 
-    urLinkedin: string,
-    experiencia1: string,
-    experiencia2: string
+    educacion: string | null,
+    experiencia1: string | null,
+    experiencia2: string | null,
+    createdAt: Date,
+    updatedAt: Date,
+    urlLinkedin: string | null,
+    estado: EstadoCandidato
 }
 
 export interface PostCandidato {
@@ -20,7 +32,7 @@ export interface PostCandidato {
     skills: string[],
     experiencia: number,
     educacion: string,
-    urLinkedin: string,
+    urlLinkedin: string,
     experiencia1: string,
     experiencia2: string
 }

@@ -28,10 +28,10 @@ export function useCandidatoForm(){
             nombre,
             email,
             telefono,
-            skills: skills,
+            skills,
             experiencia,
             educacion,
-            urLinkedin: urlLinkedin,
+            urlLinkedin,
             experiencia1,
             experiencia2
         };
