@@ -3,6 +3,8 @@ import CandidatosPage from './pages/CandidatosPage'
 import DashboardPage from './pages/DashboardPage'
 import HomePage from './pages/HomePage'
 
+
+
 function App() {
 
 

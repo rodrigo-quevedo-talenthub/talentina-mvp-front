@@ -6,6 +6,15 @@ import App from './App.tsx'
 
 import './styles/index.css'
 
+import prisma from '../prisma/config/prisma'
+
+async function buscarCandidatos() {
+    const result = await prisma.candidato.findMany()
+    return result;
+}
+
+const result = buscarCandidatos();  
+console.log(result);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -14,3 +23,4 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
