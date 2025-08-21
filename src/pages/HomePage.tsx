@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Header from "../components/Header/Header";
+import { ROUTES } from "../constants/routes";
 
 const buttonStyle = {padding: "10px", border: "1px solid #000"}
 
@@ -7,13 +9,17 @@ export default function HomePage() {
 
 
     return (
-        <div>
-            <h1 style={{marginBottom: "10px"}}>Talentina MVP</h1>
+        <>
+            <Header/>
 
-            <Link to="/candidatos" style={buttonStyle}>Postularse</Link>
+            <main>
+                <h1 style={{marginBottom: "10px"}}>Talentina MVP</h1>
 
-            <Link to="/dashboard" style={buttonStyle} >Dashboard</Link>
-            
-        </div>
+                <Link to={ROUTES.POSTULARSE} style={buttonStyle}>Postularse</Link>
+
+                <Link to={ROUTES.DASHBOARD} style={buttonStyle}>Dashboard</Link>
+
+            </main>
+        </>
     );
 }

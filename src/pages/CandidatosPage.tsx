@@ -1,4 +1,5 @@
 import CandidatosForm from "../components/CandidatosForm/CandidatosForm";
+import Header from "../components/Header/Header";
 
 
 
@@ -7,11 +8,14 @@ export default function CandidatosPage() {
 
 
     return (
-        <div>
-        
+    <>
+        <Header/>
+
+        <main>
             <h1>Postularse</h1>
             
             <CandidatosForm/>
-        </div>
+        </main>
+    </>
     );
 }
